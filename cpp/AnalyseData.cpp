@@ -32,7 +32,10 @@ vector<float> datax, datay;
 
 int n = 10;
 float x, y, xy, xx, magn;
-float sumx, sumy, sumxy, sumxx, p, q;
+
+double sumx, sumy, sumxy, sumxx;
+
+double p, q;
 
 double pow;
 
@@ -61,7 +64,6 @@ datay.push_back(y);
 magn = funcmag(x,y);
 pow = funcpow(x,y);
 
-
 cout << "The x and y values in line " << i+1 << " are " << x << " and " << y <<endl;
 
 cout << " and its magnitude is " << magn << " and x to power y is " <<  pow <<endl;
@@ -70,9 +72,6 @@ outputfile_1 << x << " \t " << y << endl;
 
 outputfile_2 << magn << endl;
 
-outputfile_3 << p << " " << q << endl;
-
-outputfile_4 << pow << endl;
 
 xy = x*y;
 xx =x*x;
@@ -81,9 +80,13 @@ sumy+=y;
 sumxx += xx;
 sumx+=x;
 
-p = ((n*(sumxy)) - ((sumx)*(sumy))) / ((n*(sumxx))-((sumx)*(sumx)));
-q = ((sumxx * sumy) - (sumxy * sumx)) / ((n * sumxx) - (sumx * sumx));
+p = funcp(n,sumxy,sumx,sumy,sumxx);
+q = funcq(n,sumxy,sumx,sumy,sumxx);
 
+
+outputfile_3 << p << " " << q << endl;
+
+outputfile_4 << pow << endl;
 
 //cout << "The fit of the data has slope p = " << p << " and q = " << q << endl; 
 
@@ -104,5 +107,8 @@ outputfile_4.close();
 
 
 }
+
+
+
 
 
