@@ -37,7 +37,7 @@ double sumx, sumy, sumxy, sumxx;
 
 double p, q;
 
-double pow;
+double pow, chi;
 
 if(!datainput.is_open()){
 
@@ -79,19 +79,16 @@ sumx+=x;
 
 p = funcp(i+1,sumxy,sumx,sumy,sumxx);
 q = funcq(i+1,sumxy,sumx,sumy,sumxx);
+chi+=funchi(i+1,x,sumx);
 
-cout << " n =  " <<  i+1  <<  " p =  " <<  p << " q = " << q <<endl;
-//cout <<"  x = " << x << " y = " << y <<  " x*y =  " << xy <<  " x*x =" << xx << endl; 
-
-//cout << "Sum X = " << sumx << " Sum Y = "<< sumy<< " Sum of X^2 = " << sumxx << " Sum of X*Y = " << sumxy<< endl; 
-
+//cout << " n =  " <<  i+1  <<  " p =  " <<  p << " q = " << q << " Chi = " << chi <<endl;
 
 cout << "    " << endl;
 outputfile_1 << x << " \t " << y << endl;
 
 outputfile_2 << magn << endl;
 
-outputfile_3 << p << " " << q << endl;
+outputfile_3 << p << " " << q << " " << chi <<endl;
 
 outputfile_4 << pow << endl;
 
@@ -106,10 +103,6 @@ outputfile_1.close();
 outputfile_2.close();
 outputfile_3.close();
 outputfile_4.close();
-
-
-
-
 
 
 

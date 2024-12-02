@@ -36,6 +36,12 @@ return (((sumxx * sumy) - (sumxy * sumx)) / ((i * sumxx) - (sumx * sumx)));
 
 
 
+double funchi(int i, float x, double sumx){
+
+return ((x-(sumx/i)) * (x-(sumx/i)))/(sumx/i);
+
+}
+
 
 
 
