@@ -1,6 +1,4 @@
-// Exercise I, written 29 - 11 - 2024
-// ODUSINA EMMANUEL SEYI
-
+// Exercise I, written 26 - 11 - 2024
 
 #include <iostream>
 #include <fstream>
@@ -20,12 +18,19 @@ ifstream datainput;
 
 datainput.open(inputfile);
 
-fstream outputfile;
-outputfile.open("dataout.txt", ios::out);
+fstream outputfile_1;
+fstream outputfile_2;
+fstream outputfile_3;
+fstream outputfile_4;
+
+outputfile_1.open("dataout_1.txt", ios::out);
+outputfile_2.open("dataout_2.txt", ios::out);
+outputfile_3.open("dataout_3.txt", ios::out);
+outputfile_4.open("dataout_4.txt", ios::out);
 
 vector<float> datax, datay;
 
-int n = 25;
+int n = 10;
 float x, y, xy, xx, magn;
 float sumx, sumy, sumxy, sumxx, p, q;
 
@@ -41,7 +46,12 @@ else{
 cout << " " << inputfile << " is opened " << endl;
 }
 
-for (int i = 0; i < 25; i++){
+cout << "How many number of points do you want to calculate from the data?" << endl;
+cin >> n ;
+
+for (int i = 0; i <= n-1; i++){
+
+if(datainput.eof()) break;
 
 datainput >> x >> y;
 
@@ -54,9 +64,15 @@ pow = funcpow(x,y);
 
 cout << "The x and y values in line " << i+1 << " are " << x << " and " << y <<endl;
 
-cout << " Magnitude of (x,y) is " << magn << "and x to power y (using inbuilt function for now) is " <<  pow <<endl;
+cout << " and its magnitude is " << magn << " and x to power y is " <<  pow <<endl;
 
-outputfile << x << " \t " << y << endl;
+outputfile_1 << x << " \t " << y << endl;
+
+outputfile_2 << magn << endl;
+
+outputfile_3 << p << " " << q << endl;
+
+outputfile_4 << pow << endl;
 
 xy = x*y;
 xx =x*x;
@@ -69,14 +85,17 @@ p = ((n*(sumxy)) - ((sumx)*(sumy))) / ((n*(sumxx))-((sumx)*(sumx)));
 q = ((sumxx * sumy) - (sumxy * sumx)) / ((n * sumxx) - (sumx * sumx));
 
 
-cout << "The fit of the data has slope p = " << p << " and q = " << q << endl; 
+//cout << "The fit of the data has slope p = " << p << " and q = " << q << endl; 
+
 
 
 }
 
 datainput.close();
-outputfile.close();
-
+outputfile_1.close();
+outputfile_2.close();
+outputfile_3.close();
+outputfile_4.close();
 
 
 
@@ -85,8 +104,5 @@ outputfile.close();
 
 
 }
-
-
-
 
 

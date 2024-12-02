@@ -1,0 +1,6 @@
+-1.07814e-16 4.30269e-41
+-nan -nan
+-nan -nan
+-nan -nan
+-nan -nan
+-nan -nan
