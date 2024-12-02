@@ -20,16 +20,24 @@ return pow(x,y) ;
 }
 
 
-double funcp(int n, double sumxy, double sumx, double sumy, double sumxx){
+double funcp(int i, double sumxy, double sumx, double sumy, double sumxx){
 
-return (((n*(sumxy)) - ((sumx)*(sumy))) / ((n*(sumxx))-((sumx)*(sumx)))) ;
+return (((i*(sumxy)) - ((sumx)*(sumy))) / ((i*(sumxx))-((sumx)*(sumx)))) ;
+
+}
+
+
+
+double funcq(int i, double sumxy, double sumx, double sumy, double sumxx){
+
+return (((sumxx * sumy) - (sumxy * sumx)) / ((i * sumxx) - (sumx * sumx)));
 
 }
 
 
 
-double funcq(int n, double sumxy, double sumx, double sumy, double sumxx){
 
-return (((sumxx * sumy) - (sumxy * sumx)) / ((n * sumxx) - (sumx * sumx)));
 
-}
+
+
+

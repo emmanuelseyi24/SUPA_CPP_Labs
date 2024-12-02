@@ -56,6 +56,8 @@ for (int i = 0; i <= n-1; i++){
 
 if(datainput.eof()) break;
 
+//n=i+1;
+
 datainput >> x >> y;
 
 datax.push_back(x);
@@ -66,12 +68,7 @@ pow = funcpow(x,y);
 
 cout << "The x and y values in line " << i+1 << " are " << x << " and " << y <<endl;
 
-cout << " and its magnitude is " << magn << " and x to power y is " <<  pow <<endl;
-
-outputfile_1 << x << " \t " << y << endl;
-
-outputfile_2 << magn << endl;
-
+cout << "  Its magnitude is " << magn << " and x to power y is " <<  pow <<endl;
 
 xy = x*y;
 xx =x*x;
@@ -80,15 +77,25 @@ sumy+=y;
 sumxx += xx;
 sumx+=x;
 
-p = funcp(n,sumxy,sumx,sumy,sumxx);
-q = funcq(n,sumxy,sumx,sumy,sumxx);
+p = funcp(i+1,sumxy,sumx,sumy,sumxx);
+q = funcq(i+1,sumxy,sumx,sumy,sumxx);
 
+cout << " n =  " <<  i+1  <<  " p =  " <<  p << " q = " << q <<endl;
+//cout <<"  x = " << x << " y = " << y <<  " x*y =  " << xy <<  " x*x =" << xx << endl; 
+
+//cout << "Sum X = " << sumx << " Sum Y = "<< sumy<< " Sum of X^2 = " << sumxx << " Sum of X*Y = " << sumxy<< endl; 
+
+
+cout << "    " << endl;
+outputfile_1 << x << " \t " << y << endl;
+
+outputfile_2 << magn << endl;
 
 outputfile_3 << p << " " << q << endl;
 
 outputfile_4 << pow << endl;
 
-//cout << "The fit of the data has slope p = " << p << " and q = " << q << endl; 
+
 
 
 
