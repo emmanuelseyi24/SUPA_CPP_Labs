@@ -92,10 +92,6 @@ outputfile_3 << p << " " << q << " " << chi <<endl;
 
 outputfile_4 << pow << endl;
 
-
-
-
-
 }
 
 datainput.close();
